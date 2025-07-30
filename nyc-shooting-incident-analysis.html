@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-55M4ZB6GXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-55M4ZB6GXN');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NYC Shooting Incidents Analysis | Tadiwanashe Mudzongo</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+ 
+</head>
+<body class="is-preload">
+
+  <style>
+  /* DESKTOP: Stretch content to fill remaining space */
+@media (min-width: 769px) {
+  .zim-election-spotlight {
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+
+  .zim-election-spotlight .image {
+    flex: 0 0 auto !important;
+  }
+
+  .zim-election-spotlight .content {
+    flex: 1 !important;
+    padding: 4rem 2rem 2rem 2rem !important;
+  }
+}
+
+/* MOBILE: Stack vertically + 1rem side padding */
+@media (max-width: 768px) {
+  .zim-election-spotlight {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .zim-election-spotlight .image,
+  .zim-election-spotlight .content {
+    width: 100% !important;
+  }
+
+  .zim-election-spotlight .content {
+    padding: 2rem 1rem !important;
+  }
+
+  .zim-election-spotlight img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+</style>
+  <!-- Wrapper -->
+  <div id="wrapper" class="divided">
+
+<section class="zim-election-spotlight" id="zim-election" style="display: flex; align-items: flex-start; padding: 0; margin: 0;">
+  
+  <div class="image" style="flex: 0 0 auto; padding: 0; margin: 0;">
+    <img src="images/statue-of-liberty.jpg"
+     alt="New York City shooting incident data visualization"
+     style="display: block; margin: 0; padding: 0; width: auto; max-height: 800px;" />
+  </div>
+  
+  <div class="content">
+    <h2>NYC Shooting Incidents Dashboard</h2>
+    <p>
+      This project analyses shooting incidents in New York City, using rich data sourced from the NYC Open Data Platform.</p>
+
+    <p>
+      I undertook this project early in my career as a data analyst to gain hands-on experience working with real-world data. Crime data intrigued me because of its complexity and social importance, and New York City’s open data portal provided an excellent, rich dataset to explore. Visualising this data using Tableau helped me understand the patterns of shootings across the city and sharpen my skills with the tool. It remains one of my most formative and rewarding projects.
+    </p>
+
+    <h3>Project Highlights</h3>
+    <ul>
+      <li>Interactive data on where and when shootings occur, as well as visualising shooting rates over time</li>
+      <li>Insights into victim and perpetrator demographics</li>
+      <li>Mapping clusters and hotspots of shooting incidents</li>
+      <li>Dynamic dashboard enabling user-driven exploration</li>
+    </ul>
+
+    <h3>Access the Dashboard</h3>
+    <p>Explore the full dataset and interactive visualisations using the official Tableau dashboard linked below.</p>
+
+    <ul class="actions">
+      <li><a href="https://public.tableau.com/app/profile/tadiwanashe.mudzongo/viz/NYCShootingIncidents2006-2022/Story1" class="button" target="_blank" rel="noopener">View Tableau Dashboard</a></li>
+      <li><a href="index.html" class="button alt">Back to Home</a></li>
+    </ul>
+  </div>
+</section>
+
+
+
+<section class="springboks-spotlight" id="sourcing-data">
+  <div class="image">
+    <img src="images/NYPD-dataset.png" alt="NYPD Shooting Incident Data visualisation" />
+  </div>
+  <div class="content">
+    <h2>Sourcing the Data</h2>
+    <p>For this project, I tapped into the <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8/about_data" target="_blank" rel="noopener">NYPD Shooting Incident Historic dataset</a> via New York City’s OpenData API. After a few light transformations in Power Query to shape the data, I connected it directly to Tableau for visual exploration.</p>
+    <p>The dataset itself is a rich, citywide record of every shooting incident that has occurred in New York City from 2006 through to the end of the most recent calendar year. Each record includes detailed information about the event, such as time, location, and type of incident, along with demographic information about both victims and suspects.</p>
+  </div>
+</section>
+
+
+<section class="springboks-spotlight" id="visualising-crime">
+  <div class="image">
+    <img src="images/Visualising crime data.png" alt="Visualizing crime data" />
+  </div>
+  <div class="content">
+    <h2>Visualising Crime Data</h2>
+    <p>To better understand the patterns behind shootings in New York, I approached the data by asking four key questions: <strong>where</strong>, <strong>when</strong>, <strong>who</strong>, and <strong>why</strong>.</p>
+
+    <p><strong>Where</strong> focused on mapping the locations of individual incidents. By plotting them geographically, it became easier to identify neighborhoods with persistent violence and spot emerging hotspots over time.</p>
+
+    <p><strong>When</strong> revealed some of the most striking patterns. I broke the data down by time of day, day of the week, and season. Weekends — especially summer weekends — consistently showed spikes in violent incidents. I used Tableau’s reference band feature to highlight the summer months across line charts, clearly showing how violence surges during that time, particularly at night.</p>
+
+    <p><strong>Who</strong> involved exploring details about both victims and perpetrators. By segmenting the data demographically, I was able to uncover important insights into which groups were most at risk and which areas needed targeted interventions.</p>
+
+    <p><strong>Why</strong> is the most complex question — but I started exploring it by bringing in additional datasets. I looked at borough-level statistics like school dropout rates and median income to look for socioeconomic correlations. While causality is hard to prove, the overlap between poverty, education gaps, and violence provided compelling angles for further analysis.</p>
+
+    <p>Altogether, these visualisations helped turn raw incident reports into meaningful insights about the systemic nature of urban violence.</p>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="spotlight style1 orient-top content-align-left image-position-top onscroll-fade-in">
+  <div class="content">
+    <!--<h2>Key Insights</h2>
+    <p>Other words.</p>-->
+    <ul class="actions">
+      <li><a href="https://public.tableau.com/app/profile/tadiwanashe.mudzongo/viz/NYCShootingIncidents2006-2022/Story1" class="button" target="_blank" rel="noopener">View Tableau Dashboard</a></li>
+      <li><a href="index.html" class="button alt">Back to Home</a></li>
+    </ul>
+  </div>
+</section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="..assets/js/jquery.min.js"></script>
+  <script src="..assets/js/jquery.scrollex.min.js"></script>
+  <script src="..assets/js/jquery.scrolly.min.js"></script>
+  <script src="..assets/js/browser.min.js"></script>
+  <script src="..assets/js/breakpoints.min.js"></script>
+  <script src="..assets/js/util.js"></script>
+  <script src="..assets/js/main.js"></script>
+</body>
+</html>

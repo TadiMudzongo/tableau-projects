@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-55M4ZB6GXN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-55M4ZB6GXN');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Springboks 2023 Rugby World Cup Campaign | Tadiwanashe Mudzongo</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="is-preload">
+
+<!-- Section-specific CSS -->
+<style>
+  /* Image Section */
+  #springboks-image {
+    margin: 4rem 0;
+  }
+
+  #springboks-image .image-stack {
+    width: 100%;
+  }
+
+  #springboks-image .image-stack img {
+    width: 100%;
+    height: auto;
+    max-height: 1100px;
+    object-fit: contain;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Content Section */
+  #springboks-content {
+    padding: 4rem 2rem;
+  }
+
+  #springboks-content .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  @media (min-width: 769px) {
+    #springboks-content .content {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #springboks-content {
+      padding: 2rem 1rem;
+    }
+
+    #springboks-content .content {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  
+  @media screen and (min-width: 768px) {
+    #data-enrichment .content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+
+</style>
+
+<!-- Wrapper -->
+<div id="wrapper" class="divided">
+
+  <!-- Image Section -->
+  <section id="springboks-image" class="onload-image-fade-in">
+    <div class="image-stack">
+      <img src="images/vs-france.png" alt="Springboks RWC Campaign Visualization">
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section id="springboks-content" style="display: flex; flex-direction: column; align-items: stretch;">
+    <div class="content"  style="width: 100%; max-width: none; flex: 1;">
+      <h2>Springboks 2023 Rugby World Cup Campaign Data Visualisation</h2>
+      <p>This project visualises South Africa’s journey through the 2023 Rugby World Cup — one of the closest campaigns in the history of the tournament. The Springboks managed to win by a single point in every match of the knockout stages. As a passionate rugby fan, I was inspired and challenged to use my skills to capture the drama and the intensity of their campaign using match data, especially after witnessing the nail-biting quarter-final against France.</p>
+
+      <h3>Project Highlights</h3>
+      <ul>
+        <li>Sourcing and working with official match data</li>
+        <li>Integrating player images with data visualisations</li>
+        <li>Data enrichment to create a visual storytelling experience</li>
+      </ul>
+
+      <ul class="actions">
+        <li><a href="https://public.tableau.com/views/SpringboksRWC2023Campaign/MatchTracker" class="button" target="_blank" rel="noopener">View Tableau Dashboard</a></li>
+        <li><a href="index.html" class="button alt">Back to Home</a></li>
+      </ul>
+    </div>
+  </section>
+
+
+
+
+
+  
+
+
+
+<section id="sourcing-data" class="springboks-spotlight">
+
+  <div class="image">
+    <img src="images/Sourcing Data.png" alt="South African Rugby Union data visualization" />
+  </div>
+  <div class="content">
+    <h2>Sourcing the Data</h2>
+    <p>
+      The core performance data for this project was sourced directly from the official <a href="https://www.sarugby.co.za/match-centre/" target="_blank" rel="noopener noreferrer">South African Rugby Union website</a>. This dataset includes performance metrics for each player such as meters gained, tackles made, ball carries, defenders beaten, offloads, turnovers made, and general play kicks.
+    </p>
+    <p>
+      In addition to performance statistics, I scraped contextual information such as the stadium where the match was played, the referee, linesmen and television match officials for each match from the SA Rugby website to enrich the dataset and provide a comprehensive view of each match.
+    </p>
+    <p>
+      To enhance the dataset further, I expanded data sourcing to cover every team that competed against South Africa in the <strong>RWC Warm-Ups</strong>, the <strong>2023 Castle Lager Rugby Championship</strong> and the <strong>Rugby World Cup</strong>. Player images and biography data such as each player's height, weight, and age were scraped using UiPath Studio from the official rugby union websites of each nation. These datasets were then integrated in Microsoft Excel.
+    </p>
+  </div>
+</section>
+
+
+
+
+<section id="sourcing-data" class="springboks-spotlight">
+  <div class="image">
+    <img src="images/player_profile_image_6sri9q.jpg" alt="Headshot of a rugby player used in the dashboard" />
+  </div>
+  <div class="content">
+    <h2>Player Images</h2>
+    <p>To make the dashboard more engaging and personal, I integrated player headshots for every team. The goal was to give each player a visual presence in the dashboard.</p>
+    <p>During the data scraping process outlined in the previous section, I downloaded and compressed the image files for each player, and then uploaded them to an image hosting website to generate public image URLs.</p>
+    <p>These URLs were then added to the dataset, allowing Tableau to display each player’s image dynamically throughout the dashboard.</p>
+  </div>
+</section>
+
+<section class="springboks-spotlight" id="data-enrichment">
+  <div class="content">
+    <h2>Data Enrichment</h2>
+    <p>This was one of the most exciting parts of the entire project — and honestly, I was suprised by how much it helped to tell the story of the campaign. I created a table to highlight standout performances from each match, with URLs to short-form content from Tik-Tok and Instagram for specific moments. Altogether, I sourced and linked 71 highlight reels across the dataset.</p>
+
+    <p>The clips showcase some of the most entertaining and defining moments of the campaign: sidesteps, hard collisions, and ultra instinct level execution. These include <a href="https://www.instagram.com/reel/Cw9p6OqtS4J/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Siya Kolisi’s inspirational return</a> from an ACL injury just in time for the World Cup, <a href="https://www.instagram.com/reel/CxlEBD9Nq05/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Damian de Allende’s hard running</a> against the Irish in the group stages, and <a href="https://www.instagram.com/reel/Cygbb6UNUKu/?utm_source=ig_web_copy_link" target="_blank" rel="noopener">Jesse Kriel’s legendary performance</a> in the quarter-final against France.</p>
+
+    <ul class="actions">
+      <li><a href="https://public.tableau.com/app/profile/tadiwanashe.mudzongo/viz/Springboks2023RugbyWorldCupCampaign/TheSpringboks2023Campaign" class="button" target="_blank" rel="noopener">View Tableau Dashboard</a></li>
+      <li><a href="index.html" class="button alt">Back to Home</a></li>
+    </ul>
+
+    <!-- Instagram Reel Embed -->
+    <div class="video-embed" style="margin-top: 2rem; padding: 0;">
+      <blockquote class="instagram-media"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/reel/Cw9p6OqtS4J/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"
+        style="margin: 0; padding: 0; max-width: 540px; width: 100%; border: none;">
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+
+
+
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
