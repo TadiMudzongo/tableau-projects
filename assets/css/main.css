@@ -8801,7 +8801,7 @@ input, select, textarea {
 
 .springboks-spotlight .image {
   flex: 4;
-  max-width: 40%;
+  max-width: 100%;
   display: block;       /* remove flex layout here */
 }
 
