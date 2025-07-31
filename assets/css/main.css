@@ -8800,7 +8800,7 @@ input, select, textarea {
 }
 
 .springboks-spotlight .image {
-  flex: 4;
+  flex: 3;
   max-width: 100%;
   display: block;       /* remove flex layout here */
 }
@@ -8815,7 +8815,7 @@ input, select, textarea {
 
 
 .springboks-spotlight .content {
-  flex: 1;
+  flex: 2;
   padding-right: 4rem; /* or try 3rem or 4rem for more spacing */
 }
 
