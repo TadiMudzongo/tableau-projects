@@ -8815,7 +8815,7 @@ input, select, textarea {
 
 
 .springboks-spotlight .content {
-  flex: 2;
+  flex: 1;
   padding-right: 4rem; /* or try 3rem or 4rem for more spacing */
 }
 
