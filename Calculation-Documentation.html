@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-55M4ZB6GXN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-55M4ZB6GXN');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chicago VRD Calculations Documentation | Tadiwanashe Mudzongo</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body class="is-preload">
+
+<div id="wrapper" class="divided">
+
+  <!-- Content Section -->
+  <section id="springboks-content" style="display: flex; flex-direction: column; align-items: stretch;">
+    <div class="content" style="width: 100%; max-width: none; flex: 1;">
+      <h2>Chicago Violence Reduction Dashboard | Calculation Documentation</h2>
+      <p>This page provides technical documentation for key calculations used in the Tableau dashboard, including details on logic, assumptions, and formula design.</p>
+    </div>
+  </section>
+
+  <!-- Calculation Section 1 -->
+  <section class="springboks-spotlight" id="calc-1">
+    <div class="content">
+      <h2>1. Weekly Homicide Rate</h2>
+      <p>
+        This metric estimates the average number of homicides per week for a given view context. The formula is:
+      </p>
+      <p style="font-size: 1.2rem;">
+        $$
+        \text{Weekly Homicide Rate} = \frac{\text{Count of Homicide Victimizations}}{\dfrac{\text{MAX Date} - \text{MIN Date}}{7}}
+        $$
+      </p>
+      <p>
+        The denominator is calculated as the number of days between the earliest and latest dates in the filtered context, divided by 7 to convert it to weeks. To ensure consistent comparison across all communities and formatting groups, the calculation uses Tableau's Level of Detail (LOD) expression:
+      </p>
+      <p>
+        $$
+        \text{Denominator} = \frac{\text{DATEDIFF(day, MIN(Date), MAX(Date))}}{7}
+        $$
+      </p>
+      <p>
+        This value is computed using:
+      </p>
+      <pre><code>
+SUM((
+  DATEDIFF('day',
+    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
+    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+  ) / 7.0
+))
+        </code></pre>
+      <p>
+        The numerator is simply the count of homicide victimizations in the current filter context.
+      </p>
+    </div>
+  </section>
+
+  <!-- Placeholder Section 2 -->
+  <section class="springboks-spotlight" id="calc-2">
+    <div class="content">
+      <h2>2. Placeholder Calculation</h2>
+      <p>This section will explain another core metric used in the dashboard.</p>
+      <p>Details to be added...</p>
+    </div>
+  </section>
+
+  <!-- Placeholder Section 3 -->
+  <section class="springboks-spotlight" id="calc-3">
+    <div class="content">
+      <h2>3. Placeholder Calculation</h2>
+      <p>This section will explain another core metric used in the dashboard.</p>
+      <p>Details to be added...</p>
+    </div>
+  </section>
+
+  <!-- Placeholder Section 4 -->
+  <section class="springboks-spotlight" id="calc-4">
+    <div class="content">
+      <h2>4. Placeholder Calculation</h2>
+      <p>This section will explain another core metric used in the dashboard.</p>
+      <p>Details to be added...</p>
+    </div>
+  </section>
+
+  <!-- Placeholder Section 5 -->
+  <section class="springboks-spotlight" id="calc-5">
+    <div class="content">
+      <h2>5. Placeholder Calculation</h2>
+      <p>This section will explain another core metric used in the dashboard.</p>
+      <p>Details to be added...</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
 
