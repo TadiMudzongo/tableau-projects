@@ -45,6 +45,19 @@
     <p>
       Several metrics in this dashboard are normalized by the number of weeks in the selected date range. This enables fair comparisons between areas and groups that may span different time periods.
     </p>
+
+        <p>
+      This denominator is used in the following metrics:
+      <ul>
+        <li>Homicides per Week</li>
+        <li>Shooting Incidents per Week</li>
+        <li>Shooting Victims per Week</li>
+      </ul>
+    </p>
+    <p>
+      Each of these metrics divides the total count of incidents by the number of weeks in the filtered date range, enabling standardized comparisons even when different groups cover different time spans.
+    </p>
+    
     <p>
       The denominator for all “per week” metrics is calculated as:
     </p>
@@ -64,17 +77,7 @@ SUM((
   ) / 7.0
 ))
     </code></pre>
-    <p>
-      This denominator is used in the following metrics:
-      <ul>
-        <li>Homicides per Week</li>
-        <li>Shooting Incidents per Week</li>
-        <li>Shooting Victims per Week</li>
-      </ul>
-    </p>
-    <p>
-      Each of these metrics divides the total count of incidents by the number of weeks in the filtered date range, enabling standardized comparisons even when different groups cover different time spans.
-    </p>
+
   </div>
 </section>
 
@@ -87,6 +90,20 @@ SUM((
     <p>
       Some metrics in the dashboard are normalized by the number of days in the filtered date range. This allows you to compare areas and groups based on average daily activity, regardless of how long the time window is.
     </p>
+
+        <p>
+      This denominator is used in the following metrics:
+      <ul>
+        <li>Victimizations per Day</li>
+        <li>Homicides per Day</li>
+        <li>Shooting Incidents per Day</li>
+      </ul>
+    </p>
+    <p>
+      These metrics take the total count of incidents and divide it by the number of days in the current view, producing a normalized daily average.
+    </p>
+
+    
     <p>
       The denominator for these “per day” metrics is calculated as:
     </p>
@@ -109,17 +126,7 @@ SUM(
   ) + 1
 )
     </code></pre>
-    <p>
-      This denominator is used in the following metrics:
-      <ul>
-        <li>Victimizations per Day</li>
-        <li>Homicides per Day</li>
-        <li>Shooting Incidents per Day</li>
-      </ul>
-    </p>
-    <p>
-      These metrics take the total count of incidents and divide it by the number of days in the current view, producing a normalized daily average.
-    </p>
+
   </div>
 </section>
 
