@@ -72,8 +72,8 @@
     <pre><code>
 SUM((
   DATEDIFF('day',
-    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
-    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+    {EXCLUDE [Community Area] : MIN([Date])},
+    {EXCLUDE [Community Area] : MAX([Date])}
   ) / 7.0
 ))
     </code></pre>
@@ -121,8 +121,8 @@ SUM((
     <pre><code>
 SUM(
   DATEDIFF('day',
-    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
-    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+    {EXCLUDE [Community Area] : MIN([Date])},
+    {EXCLUDE [Community Area] : MAX([Date])}
   ) + 1
 )
     </code></pre>
@@ -179,13 +179,13 @@ SUM(
 SUM(
   DATEDIFF(
     'day',
-    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
-    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+    {EXCLUDE [Community Area] : MIN([Date])},
+    {EXCLUDE [Community Area] : MAX([Date])}
   ) /
   IF DATEDIFF(
        'day',
-       {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
-       {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+       {EXCLUDE [Community Area] : MIN([Date])},
+       {EXCLUDE [Community Area] : MAX([Date])}
      ) = 365 THEN 365
   ELSE 365.25
   END
