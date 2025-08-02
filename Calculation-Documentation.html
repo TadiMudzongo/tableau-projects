@@ -38,41 +38,46 @@
   </section>
 
   <!-- Calculation Section 1 -->
-  <section class="springboks-spotlight" id="calc-1">
-    <div class="content">
-      <h2>1. Weekly Homicide Rate</h2>
-      <p>
-        This metric estimates the average number of homicides per week for a given view context. The formula is:
-      </p>
-      <p style="font-size: 1.2rem;">
-        $$
-        \text{Weekly Homicide Rate} = \frac{\text{Count of Homicide Victimizations}}{\dfrac{\text{MAX Date} - \text{MIN Date}}{7}}
-        $$
-      </p>
-      <p>
-        The denominator is calculated as the number of days between the earliest and latest dates in the filtered context, divided by 7 to convert it to weeks. To ensure consistent comparison across all communities and formatting groups, the calculation uses Tableau's Level of Detail (LOD) expression:
-      </p>
-      <p>
-        $$
-        \text{Denominator} = \frac{\text{DATEDIFF(day, MIN(Date), MAX(Date))}}{7}
-        $$
-      </p>
-      <p>
-        This value is computed using:
-      </p>
-      <pre><code>
+<!-- Calculation Section: Per Week Denominator -->
+<section class="springboks-spotlight" id="calc-per-week">
+  <div class="content">
+    <h2>Per Week Denominator</h2>
+    <p>
+      Several metrics in this dashboard are normalized by the number of weeks in the selected date range. This enables fair comparisons between areas and groups that may span different time periods.
+    </p>
+    <p>
+      The denominator for all “per week” metrics is calculated as:
+    </p>
+    <p style="font-size: 1.2rem;">
+      $$
+      \text{Weeks} = \frac{\text{MAX(Date)} - \text{MIN(Date)}}{7}
+      $$
+    </p>
+    <p>
+      In Tableau, we calculate this using a Level of Detail (LOD) expression to ensure the time span is fixed across all formatting and groupings:
+    </p>
+    <pre><code>
 SUM((
   DATEDIFF('day',
     {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
     {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
   ) / 7.0
 ))
-        </code></pre>
-      <p>
-        The numerator is simply the count of homicide victimizations in the current filter context.
-      </p>
-    </div>
-  </section>
+    </code></pre>
+    <p>
+      This denominator is used in the following metrics:
+      <ul>
+        <li>Homicides per Week</li>
+        <li>Shooting Incidents per Week</li>
+        <li>Shooting Victims per Week</li>
+      </ul>
+    </p>
+    <p>
+      Each of these metrics divides the total count of incidents by the number of weeks in the filtered date range, enabling standardized comparisons even when different groups cover different time spans.
+    </p>
+  </div>
+</section>
+
 
   <!-- Placeholder Section 2 -->
   <section class="springboks-spotlight" id="calc-2">
