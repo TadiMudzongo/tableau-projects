@@ -136,11 +136,11 @@ SUM(
   <div class="content">
     <h2>Annualization of Rates (Per 100,000 People)</h2>
     <p>
-      To enable meaningful comparisons across different time spans, several metrics in this dashboard are annualized and normalized per 100,000 people. This allows metrics calculated from short or irregular time periods to be scaled to an annual rate, making them easier to compare across neighborhoods or formatting groups.
+      To compare incident rates fairly across different time periods, several metrics in this dashboard are annualized and normalized per 100,000 people. This process adjusts counts from the selected date range to an estimated yearly rate.
     </p>
 
     <p>
-      The following metrics use this annualization logic:
+      The following metrics use this annualization method:
       <ul>
         <li>Homicides per 100,000</li>
         <li>Homicide Victimizations per 100,000</li>
@@ -150,35 +150,50 @@ SUM(
     </p>
 
     <p>
-      These metrics divide the count of incidents by the population, multiply by 100,000, and then divide by the number of years spanned by the selected date range.
+      These metrics divide the count of incidents by the population, multiply by 100,000, and then divide by the fraction of the year represented by the selected date range. The divisor uses 365 days exactly when the range is one year; otherwise, it uses 365.25 to account for leap years.
     </p>
 
     <p style="font-size: 1.2rem;">
       $$
       \text{Annualized Rate per 100,000} =
       \frac{\text{Incident Count}}{\text{Population}} \times 100{,}000
-      \div \left( \frac{\text{MAX(Date)} - \text{MIN(Date)}}{365.25} \right)
+      \div \left( \frac{\text{MAX(Date)} - \text{MIN(Date)}}{d} \right)
+      $$
+      <br/>
+      where
+      $$
+      d = \begin{cases}
+      365 & \text{if date range = 365 days} \\
+      365.25 & \text{otherwise}
+      \end{cases}
       $$
     </p>
 
     <p>
-      In Tableau, this is implemented using a Level of Detail (LOD) expression to fix the date span across all breakdowns:
+      In Tableau, this is implemented with the following calculation:
     </p>
 
     <pre><code>
-[Count of Homicide Victimizations] / SUM([2020 Population])
+[Count of Incidents] / SUM([2020 Population])
 * 100000 /
 SUM(
   DATEDIFF(
     'day',
     {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
     {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
-  ) / 365.25
+  ) /
+  IF DATEDIFF(
+       'day',
+       {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
+       {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+     ) = 365 THEN 365
+  ELSE 365.25
+  END
 )
     </code></pre>
-
   </div>
 </section>
+
 
 
   
