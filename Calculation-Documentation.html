@@ -80,13 +80,49 @@ SUM((
 
 
   <!-- Placeholder Section 2 -->
-  <section class="springboks-spotlight" id="calc-2">
-    <div class="content">
-      <h2>2. Placeholder Calculation</h2>
-      <p>This section will explain another core metric used in the dashboard.</p>
-      <p>Details to be added...</p>
-    </div>
-  </section>
+<!-- Calculation Section: Per Day Denominator -->
+<section class="springboks-spotlight" id="calc-per-day">
+  <div class="content">
+    <h2>Per Day Denominator</h2>
+    <p>
+      Some metrics in the dashboard are normalized by the number of days in the filtered date range. This allows you to compare areas and groups based on average daily activity, regardless of how long the time window is.
+    </p>
+    <p>
+      The denominator for these “per day” metrics is calculated as:
+    </p>
+    <p style="font-size: 1.2rem;">
+      $$
+      \text{Days} = (\text{MAX(Date)} - \text{MIN(Date)}) + 1
+      $$
+    </p>
+    <p>
+      The +1 ensures both endpoints of the date range are included — for example, Jan 1 to Jan 1 is treated as 1 day, not 0.
+    </p>
+    <p>
+      In Tableau, this is implemented using a Level of Detail (LOD) expression to fix the date span across all groupings:
+    </p>
+    <pre><code>
+SUM(
+  DATEDIFF('day',
+    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MIN([Date])},
+    {EXCLUDE [Community Area], [Formatting Shapefile Coloumn] : MAX([Date])}
+  ) + 1
+)
+    </code></pre>
+    <p>
+      This denominator is used in the following metrics:
+      <ul>
+        <li>Victimizations per Day</li>
+        <li>Homicides per Day</li>
+        <li>Shooting Incidents per Day</li>
+      </ul>
+    </p>
+    <p>
+      These metrics take the total count of incidents and divide it by the number of days in the current view, producing a normalized daily average.
+    </p>
+  </div>
+</section>
+
 
   <!-- Placeholder Section 3 -->
   <section class="springboks-spotlight" id="calc-3">
