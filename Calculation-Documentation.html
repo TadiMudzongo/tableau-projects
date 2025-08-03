@@ -88,31 +88,40 @@
 <div id="wrapper" class="divided">
 
   <!-- Content Section -->
+  <div id="wrapper" class="divided">
+
+  <!-- Content Section -->
   <section id="springboks-content" style="display: flex; flex-direction: column; align-items: stretch;">
     <div class="content" style="width: 100%; max-width: none; flex: 1;">
       <h2>Chicago Violence Reduction Dashboard | <span style="color: #898989;">Calculation Documentation</span></h2>
-      <p>This page provides technical documentation for key calculations used in the Tableau dashboard, including details on logic, assumptions, and formula design.</p>
+      <p>
+        This page provides technical documentation for key calculations and metrics used in the Tableau dashboard.
+        The goal is to support transparency, clarity, and reproducibility of the visualizations.
+        All formulas are based on publicly available data, and we encourage users to review the 
+        <a href="https://dev.socrata.com/foundry/data.cityofchicago.org/gumc-mgzr" target="_blank" rel="noopener noreferrer">source dataset documentation</a>
+        if they'd like to recreate the analysis.
+      </p>
 
-          <h3>Document Sections</h3>
-    <ul>
-      <li>Overview Dashboard</li>
-      <li>Incident Heatmap Dashboard</li>
-      <li>Integrating Gang Territories</li>
-      <li>Using Page Controls</li>
-    </ul>
-
-    <ul class="actions">
-      <li><a href="Chicago-Shooting-Incidents-Dashboard-Guide.html" class="button">View User Guide</a></li>
+      <h3>Document Sections</h3>
+      <ul>
+        <li>Weekly Rate Denominator Logic</li>
+        <li>Daily Rate Denominator Logic</li>
+        <li>Annualization of rates</li>
       </ul>
-      
+
+      <ul class="actions">
+        <li><a href="Chicago-Shooting-Incidents-Dashboard-Guide.html" class="button">View User Guide</a></li>
+      </ul>
     </div>
   </section>
+</div>
+
 
   <!-- Calculation Section 1 -->
 <!-- Calculation Section: Per Week Denominator -->
 <section id="springboks-content" style="display: flex; flex-direction: column; align-items: stretch;">
   <div class="content">
-    <h2>Per Week Denominator</h2>
+    <h2>Per Week Denominator Logic</h2>
     <p>
       Several metrics in this dashboard are normalized by the number of weeks in the selected date range. This enables fair comparisons between areas and groups that may span different time periods.
     </p>
