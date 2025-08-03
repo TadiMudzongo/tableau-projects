@@ -120,9 +120,10 @@
         <p>
       This denominator is used in the following metrics:
       <ul>
+        
+        <li>Incidents per Week</li>
+        <li>Victimizations per Week</li>
         <li>Homicides per Week</li>
-        <li>Shooting Incidents per Week</li>
-        <li>Shooting Victims per Week</li>
       </ul>
     </p>
     <p>
@@ -165,9 +166,9 @@ SUM((
         <p>
       This denominator is used in the following metrics:
       <ul>
+        <li>Incidents per Day</li>
         <li>Victimizations per Day</li>
         <li>Homicides per Day</li>
-        <li>Shooting Incidents per Day</li>
       </ul>
     </p>
     <p>
@@ -205,7 +206,7 @@ SUM(
 <!-- Calculation Section: Annualization of Rates -->
 <section id="springboks-content" style="display: flex; flex-direction: column; align-items: stretch;">
   <div class="content">
-    <h2>Annualization of Rates (Per 100,000 People)</h2>
+    <h2>Annualization of Rates (Per 100 000 People)</h2>
     <p>
       To compare incident rates fairly across different time periods, several metrics in this dashboard are annualized and normalized per 100,000 people. This process adjusts counts from the selected date range to an estimated yearly rate.
     </p>
@@ -213,10 +214,9 @@ SUM(
     <p>
       The following metrics use this annualization method:
       <ul>
-        <li>Homicides per 100,000</li>
-        <li>Homicide Victimizations per 100,000</li>
-        <li>Shooting Incidents per 100,000</li>
-        <li>Shooting Victimizations per 100,000</li>
+        <li>Incidents per 100 000</li>
+        <li>Victimizations per 100 000</li>
+        <li>Homicides per 100 000</li>
       </ul>
     </p>
 
@@ -226,8 +226,8 @@ SUM(
 
     <p style="font-size: 1.2rem;">
       $$
-      \text{Annualized Rate per 100,000} =
-      \frac{\text{Incident Count}}{\text{Population}} \times 100{,}000
+      \text{Annualized Rate per 100 000} =
+      \frac{\text{Incident Count}}{\text{Population}} \times 100 000
       \div \left( \frac{\text{MAX(Date)} - \text{MIN(Date)}}{d} \right)
       $$
       <br/>
