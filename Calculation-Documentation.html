@@ -228,7 +228,7 @@ SUM(
         <strong>Example (Incidents per 100 000):</strong>
       $$
       \text{Annualized Rate per 100 000} =
-      \frac{\text{Incident Count}}{\text{Population}} \times 100 000
+      \frac{\text{Count of Incidents}}{\text{Population}} \times 100 000
       \div \left( \frac{\text{MAX(Date)} - \text{MIN(Date)}}{d} \right)
       $$
       <br/>
@@ -246,7 +246,7 @@ SUM(
     </p>
 
     <pre><code>
-[Count of Incidents] / SUM([2020 Population])
+[Count of Incidents] / SUM([2022 Population])
 * 100000 /
 SUM(
   DATEDIFF(
